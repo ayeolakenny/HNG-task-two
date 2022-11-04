@@ -7,8 +7,13 @@ export class AppController {
   constructor(private readonly appService: AppService) {}
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  getInput() {
+    return {
+      slackUsername: 'ayeolakenny',
+      age: '21',
+      backend: true,
+      Bio: 'Hi i am ayeolakenny',
+    };
   }
 
   @Post()
