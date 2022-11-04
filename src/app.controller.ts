@@ -12,7 +12,6 @@ export class AppController {
   }
 
   @Post()
-  @HttpCode(204)
   runArithmetic(@Body() input: ArithmeticInputDto): {
     slackUsername: string;
     result: number;
