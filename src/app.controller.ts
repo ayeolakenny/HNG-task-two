@@ -22,20 +22,20 @@ export class AppController {
     if (operation_type === OPERATION_TYPE.ADDITION) {
       return {
         slackUsername: 'ayeolakenny',
-        result: x + y,
         operation_type,
+        result: x + y,
       };
     } else if (operation_type === OPERATION_TYPE.MULTIPLICATION) {
       return {
         slackUsername: 'ayeolakenny',
-        result: x * y,
         operation_type,
+        result: x * y,
       };
     } else if (operation_type === OPERATION_TYPE.SUBTRACTION) {
       return {
         slackUsername: 'ayeolakenny',
-        result: x - y,
         operation_type,
+        result: x - y,
       };
     }
   }
