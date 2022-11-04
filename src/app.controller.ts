@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, HttpCode, Post, Res } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ArithmeticInputDto, OPERATION_TYPE } from './request.dto';
 
@@ -12,7 +12,12 @@ export class AppController {
   }
 
   @Post()
-  runArithmetic(@Body() input: ArithmeticInputDto) {
+  @HttpCode(200)
+  runArithmetic(@Body() input: ArithmeticInputDto): {
+    slackUsername: string;
+    result: number;
+    operation_type: OPERATION_TYPE;
+  } {
     const { operation_type, x, y } = input;
     if (operation_type === OPERATION_TYPE.ADDITION) {
       return {
